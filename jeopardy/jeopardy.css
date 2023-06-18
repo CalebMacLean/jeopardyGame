@@ -1,0 +1,147 @@
+/* some colors you may find useful:
+  #115ff4
+  #060ce9
+  #28a200
+  #8d2ab5
+  #74119c
+*/
+/* Common Styles */
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  border: none;
+  background-color: transparent;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* Table Styles */
+.game-board {
+  height: 90vh;
+  max-height: 90vh;
+  width: 90vw;
+  max-width: 90vw;
+}
+
+#categories td, #clues td{
+  width: 18vw;
+  max-width: 18vw;
+  overflow: hidden;
+  background-color: #060ce9;
+  color: white;
+  text-align: center;
+}
+
+#categories td {
+  text-transform: uppercase;
+  text-shadow: 0.1rem 0.1rem 0.1rem #115ff4, 0.1rem 0.1rem 0.1rem white;
+  height: 12vh;
+  max-height: 12vh;
+  padding: 0.3rem;
+}
+
+#clues td {
+  height: 18vh;
+  max-height: 18vh;
+}
+/* Button Styles */
+#start-button {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 90vw;
+  height: 3.5rem;
+  background-color: #115ff4;
+  border-radius: 1rem;
+  box-shadow: 0.2rem 0.2rem 0.2rem #060ce9;
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 2rem;
+  text-transform: uppercase;
+  transition: width 1s, height 1s, font-size 1s, box-shadow 1s;
+}
+
+#start-button:hover{
+  width: 95vw;
+  height: 3.8rem;
+  font-size: 2.5rem;
+  box-shadow: 0.4rem 0.4rem 0.4rem #060ce9;
+}
+
+#start-button:active{
+  background-color: #74119c;
+  box-shadow: 0.1rem 0.1rem 0.1rem #060ce9;
+}
+/* Loading Screen Styles */
+.loading-screen{
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #115ff4;
+}
+
+.ring{
+  position: absolute;
+  width: 15rem;
+  height: 15rem;
+  border-radius: 50%;
+  animation: ringAnm 2s linear infinite;
+}
+@keyframes ringAnm {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 0.2rem 1rem 0.4rem #060ce9;
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 0.2rem 1rem 0.4rem #8d2ab5;
+  }
+  75% {
+    transform: rotate(360deg);
+    box-shadow: 0.2rem 1rem 0.4rem #74119c;
+  }
+  100% {
+    transform: rotate(0deg);
+    box-shadow: 0.2rem 1rem 0.4rem #060ce9;
+  }
+}
+.ring:before {
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem rgba(255,255,255,0.3);
+}
+
+.loading-screen span{
+  color: white;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  line-height: 2rem;
+  animation: textAnm 3s linear infinite;
+}
+
+@keyframes textAnm {
+  50% {
+    color: #115ff4;
+  }
+}
